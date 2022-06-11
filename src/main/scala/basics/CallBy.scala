@@ -15,6 +15,7 @@ object CallBy extends App {
   calledByName(System.nanoTime())
 
   def infinite(): Int = 1 + infinite()
+
   def printFirst(x: Int, y: => Int): Unit = println(x)
 
   printFirst(infinite(), 34) // This will cause stackoverflow error
@@ -29,5 +30,4 @@ object CallBy extends App {
   // (2) Call by name:
   //     pass the EXPRESSION to the function
   //     expression is evaluated at every use within
-  
 }
